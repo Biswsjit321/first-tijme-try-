@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTP Generator</title>
+<style>
+document.getElementById('generate-btn').addEventListener('click', function() {
+    generateOTP();
+});
+
+function generateOTP() {
+    var otpLength = 6;
+    var characters = '0123456789';
+    var OTP = '';
+    for (var i = 0; i < otpLength; i++) {
+        OTP += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    document.getElementById('otp').innerHTML = 'Your One-Time Password is: ' + OTP;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h2>OTP Generator</h2>
+<p>Click the button below to generate a One-Time Password:</p>
+
+<button onclick="generateOTP()">Generate OTP</button>
+<p id="otp"></p>
+
+<script>
+    function generateOTP() {
+        // Define the length of the OTP
+        var otpLength = 6;
+        // Define possible characters
+        var characters = '0123456789';
+        var OTP = '';
+        for (var i = 0; i < otpLength; i++) {
+            OTP += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        document.getElementById('otp').innerHTML = 'Your One-Time Password is: ' + OTP;
+    }
+</script>
+
+</body>
+</html>
